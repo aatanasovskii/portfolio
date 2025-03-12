@@ -1,18 +1,43 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomePage from '@/pages/HomePage.vue'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env?.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomePage,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: () => import('@/pages/AboutPage.vue'),
+      component: () => import('@/layouts/MainLayout.vue'),
+      children: [
+        {
+          path: '',
+          name: 'HomePage',
+          component: () => import('@/pages/HomePage.vue'),
+        },
+        {
+          path: '/contact',
+          name: 'ContactPage',
+          component: () => import('@/pages/ContactPage.vue'),
+        },
+        {
+          path: '/skills',
+          name: 'SkillsPage',
+          component: () => import('@/pages/SkillsPage.vue'),
+        },
+        {
+          path: '/about',
+          name: 'AboutPage',
+          component: () => import('@/pages/AboutPage.vue'),
+        },
+        {
+          path: '/experience',
+          name: 'ExperiencePage',
+          component: () => import('@/pages/ExperiencePage.vue'),
+        },
+        {
+          path: '/projects',
+          name: 'ProjectsPage',
+          component: () => import('@/pages/ProjectsPage.vue'),
+        },
+      ]
     },
   ],
 })
