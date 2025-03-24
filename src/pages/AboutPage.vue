@@ -1,7 +1,5 @@
 <template>
-  <div class="about-page">
-    <h1>This is an about page</h1>
-  </div>
+  <div class="about-page"></div>
 </template>
 
 <script>
@@ -10,5 +8,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
+@use "AboutPage";
 </style>

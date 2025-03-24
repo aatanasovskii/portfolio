@@ -1,0 +1,28 @@
+.skills-page {
+  margin-top: 4rem;
+  font-family: sans-serif;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+
+    .page-title {
+      color: #333;
+    }
+  }
+
+  .content-container {
+    font-family: sans-serif;
+    line-height: 1.75;
+    color: #333;
+    padding-left: 1.5rem;
+
+    li {
+      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+    }
+  }
+}

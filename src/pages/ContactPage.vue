@@ -12,4 +12,5 @@ export default {
 
 
 <style lang='scss'>
+@use "ContactPage";
 </style>
