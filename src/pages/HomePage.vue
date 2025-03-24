@@ -9,12 +9,12 @@
     </div>
 
     <ul class="content-container">
-      <li>Software Engineer with 2.5+ years of experience in full stack development.</li>
+      <li>Software Engineer with 2.5+ years of experience in Full Stack Development.</li>
       <li>
-        Bachelor's degree in electrical engineering from the University of Electrical Engineering and Information Technologies (FEIT) Skopje
+        Bachelor's Degree in Electrical Engineering from the University of Electrical Engineering and Information Technologies (FEIT) Skopje
         <br>- (Computer Systems Engineering, Automation, and Robotics).
       </li>
-      <li>Passionate about building scalable and user-friendly web applications using modern technologies like Vue.js, Node.js, and AWS.</li>
+      <li>Passionate about building scalable and user-friendly web applications using modern technologies like Javascript, Node.js, Vue.js, GraphQL, AWS.</li>
     </ul>
 
   </main>

@@ -32,7 +32,7 @@
       <div id="page-content" class="page-content" :class="{ 'menu-active': menuOpened }">
         <router-view :key="$route.path"/>
       </div>
-<!--      <router-view/>-->
+
     </div>
 
   </div>
