@@ -7,7 +7,7 @@
       </div>
 
       <div class="user-details-container">
-        <div class="user-details">
+        <div class="user-details" @click="goToAboutPage">
           <div class="user-name-container">
             <div class="user-name">Andrej Atanasovski</div>
             <div class="user-email">andrej.atanasovski.00@gmail.com</div>
@@ -75,6 +75,9 @@ export default {
     toggleMenu() {
       this.menuOpened = !this.menuOpened;
     },
+    goToAboutPage() {
+      this.$router.push({name: 'AboutPage'});
+    }
   }
 }
 </script>

@@ -2,8 +2,8 @@
   <main class="home-page">
     <div class="header-container">
       <div>
-        <h1 class="page-title">Welcome to Andrej's portfolio</h1>
-        <h3 class="text-lg text-gray-600 mt-2">Building seamless digital experiences.</h3>
+        <h1 class="page-title">Welcome to My Portfolio</h1>
+        <div class="page-subtitle">BUILDING SEAMLESS DIGITAL EXPERIENCES.</div>
       </div>
       <img class="home-portrait" src="../assets/images/andrej_bachelor_feit.jpeg" alt="">
     </div>
