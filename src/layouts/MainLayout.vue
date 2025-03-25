@@ -26,8 +26,8 @@
           <router-link class="side-menu-item" :to="{ name: 'ProjectsPage' }">Projects</router-link>
           <router-link class="side-menu-item" :to="{ name: 'ExperiencePage' }">Experience</router-link>
           <router-link class="side-menu-item" :to="{ name: 'SkillsPage' }">Skills</router-link>
+          <router-link class="side-menu-item" :to="{ name: 'ServicesPage' }">Services</router-link>
           <router-link class="side-menu-item" :to="{ name: 'AboutPage' }">About</router-link>
-          <router-link class="side-menu-item" :to="{ name: 'ContactPage' }">Contact</router-link>
         </div>
       </div>
 

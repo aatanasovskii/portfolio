@@ -1,1 +1,46 @@
-.about-page {}
+.about-page {
+  margin-top: 4rem;
+  font-family: sans-serif;
+  //max-width: 600px;
+  padding: 20px;
+  text-align: center;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+
+    .page-title {
+      color: #333;
+    }
+  }
+}
+
+.about-content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  //font-size: 1.2rem;
+  font-size: 14px;
+  margin: 5px 0;
+}

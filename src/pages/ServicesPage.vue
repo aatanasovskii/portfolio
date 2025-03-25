@@ -1,16 +1,16 @@
 <template>
-  <main class="contact-page">
+  <main class="services-page">
 
   </main>
 </template>
 
 <script>
 export default {
-  name: 'ContactPage',
+  name: 'ServicesPage',
 }
 </script>
 
 
 <style lang='scss'>
-@use "ContactPage";
+@use "ServicesPage";
 </style>
