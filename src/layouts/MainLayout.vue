@@ -7,8 +7,10 @@
       </div>
 
       <div class="user-details-container">
-        <div class="user-details" @click="goToAboutPage">
-          <div class="user-name-container">
+        <user-avatar class="user-avatar" @click="goToAboutPage" />
+
+        <div class="user-details">
+          <div class="user-name-container" @click="goToAboutPage">
             <div class="user-name">Andrej Atanasovski</div>
             <div class="user-email">andrej.atanasovski.00@gmail.com</div>
           </div>
@@ -39,7 +41,7 @@
 
   <div class="social-container">
     <section class="social-section">
-      <h3>Social</h3>
+      <div class="social-title">Connect & Collaborate:</div>
       <a href="mailto:andrej.atanasovski.00@gmail.com">
         <img class="contact-icon" src="../assets/icons/email-icon.svg" alt="email">
       </a>
@@ -61,10 +63,11 @@
 
 <script>
 import {RouterLink, RouterView} from 'vue-router'
+import UserAvatar from "@/components/UserAvatar.vue";
 
 export default {
   name: "MainLayout",
-  components: {},
+  components: {UserAvatar},
   data() {
     return {
       menuOpened: true
