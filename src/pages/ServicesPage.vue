@@ -2,7 +2,7 @@
   <main class="services-page">
     <div class="header-container">
       <h1 class="page-title">Services</h1>
-      <h3 class="page-subtitle">What I offer 💻</h3>
+      <h3 class="page-subtitle">WHAT I OFFER 💻</h3>
     </div>
 
     <div class="services-content">
