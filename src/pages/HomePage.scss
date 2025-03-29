@@ -58,19 +58,15 @@
   }
 
   .content-container {
-    font-family: sans-serif;
+    margin: 2rem;
     line-height: 1.75;
     color: #333;
-    padding-left: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    li {
+    .content {
       margin-bottom: 1.2rem;
       font-size: 1.2rem;
-    }
-
-    .sub-content {
-      color: #333;
-      font-style: italic;
     }
   }
 

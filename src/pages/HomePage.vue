@@ -11,21 +11,21 @@
       </div>
     </div>
 
-    <ul class="content-container">
-      <li>
-        <strong>Software Engineer</strong> with 2.5+ years of experience in Full Stack Development.
-        <br><div class="sub-content">Building seamless digital experiences.</div>
-      </li>
-      <li>
-        <strong>Bachelor of Science</strong> at the University “Ss. Cyril and Methodius” (UKIM) of Skopje - Faculty of Electrical Engineering and Information Technologies (FEIT)
-        <br>- Computer Systems Engineering, Automation, and Robotics.
-      </li>
-      <li>Passionate about building scalable and user-friendly web applications using modern technologies like Javascript, Python, Node.js, Vue.js/React.js, GraphQL, AWS.</li>
-      <li>
-        <strong>AI-Powered Development:</strong> Integrating AI features in various different applications. Leveraging OpenAI, AWS Bedrock, LLAMA and
-        <br>custom AI models for tasks like image processing, natural language understanding, and predictive analytics.
-      </li>
-    </ul>
+    <div class="content-container">
+      <div class="content">
+        <strong>🔹 Software Engineer</strong> with 2.5+ years of experience in Full Stack Development.
+        <br><em>  Building seamless digital experiences.</em>
+      </div>
+      <div class="content">
+        <strong>🔹 Bachelor of Science</strong> at the University “Ss. Cyril and Methodius” (UKIM) of Skopje - Faculty of Electrical Engineering and Information Technologies (FEIT),
+        <br>Major: <em>Computer Systems Engineering, Automation, and Robotics.</em>
+      </div>
+      <div class="content">🔹 Passionate about building scalable and user-friendly web applications using modern technologies like Javascript, Python, Node.js, Vue.js/React.js, GraphQL, AWS.</div>
+      <div class="content">
+        <strong>🔹 AI-Powered Development:</strong> Integrating AI features in various different applications. Leveraging OpenAI, AWS Bedrock, LLAMA and custom AI models
+        <br>for tasks like image processing, natural language understanding, and predictive analytics.
+      </div>
+    </div>
 
   </main>
 </template>

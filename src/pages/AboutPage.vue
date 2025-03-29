@@ -28,6 +28,9 @@
         <li>🔹 Performance-optimized web solutions</li>
       </ul>
     </div>
+
+<!--  todo: Add hobbies in the About section  -->
+
   </div>
 </template>
 

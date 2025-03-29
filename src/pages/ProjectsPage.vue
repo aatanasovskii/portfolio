@@ -25,39 +25,62 @@ export default {
     return {
       projects: [
         {
+          title: "Fantasy Football Game",
+          link: "https://th.fantopy.com",
+          image: "Fantopy.png",
+          description:
+              "A movies website using TMDB API where movies are categorized, and trailers can be viewed.",
+        },
+        {
+          title: "Suisse Blockchain Crypto Token",
+          link: "https://suisseblockchain.io/",
+          image: "Suisse.png",
+          description:
+              "An interactive React app for organizing meetups. Uses Firebase for storing meetups and favorites.",
+        },
+        {
+          title: "Data Warehouse Storage",
+          // link: "https://github.com/aatanasovskii/shopping-app-vuejs",
+          image: "Tentastique.png",
+          description:
+              "A dynamic shopping app with Vue.js, Vuex, and Vue Router. Users can browse products and manage their carts.",
+        },
+          // todo: add AI apps here:
+          //
+        {
           title: "Netflix Clone - Movie Playlist (JavaScript)",
           link: "https://github.com/aatanasovskii/Netflix_Clone-project",
           image: "Netflix_Clone.png",
           description:
-              "A movies website using TMDB API where movies are categorized, and trailers can be viewed.",
+              "A movies website using TMDB API (The Movies Database) where movies are categorized, and trailers can be viewed for every movie.",
         },
         {
           title: "Vue.js Shopping App",
           link: "https://github.com/aatanasovskii/shopping-app-vuejs",
           image: "shopping-app.png",
           description:
-              "A dynamic shopping app with Vue.js, Vuex, and Vue Router. Users can browse products and manage their carts.",
+              "A dynamic simple Shopping App with Vue.js (only frontend, without backend). Users can browse products and manage their carts.",
         },
         {
           title: "React Meetup App",
           link: "https://github.com/aatanasovskii/meetups-react-app",
           image: "ReactApp_Meetups.png",
           description:
-              "An interactive React app for organizing meetups. Uses Firebase for storing meetups and favorites.",
+              "An interactive React App for organizing meetups. Uses NoSQL (Firebase) for storing your meetups and favorites.",
         },
-        {
-          title: "Movie Playlist (React)",
-          link: "https://github.com/aatanasovskii/REACT_MoviePlaylist-",
-          image: "My_Movie_Playlist.png",
-          description:
-              "A movie search and playlist app using Open Movie Database API, built with React.",
-        },
+        // {
+        //   title: "Movie Playlist (React)",
+        //   link: "https://github.com/aatanasovskii/REACT_MoviePlaylist-",
+        //   image: "My_Movie_Playlist.png",
+        //   description:
+        //       "A movie search and playlist app using Open Movie Database API, built with React.",
+        // },
         {
           title: "Sales Prediction (Machine Learning)",
           link: "https://github.com/aatanasovskii/Machine-Learning---Sales-Prediction",
           image: "ML_Predicting_Sales.png",
           description:
-              "Predicts sales using XGBOOST and Stacked Models. Created as a university thesis project.",
+              "ML model for Predicts Sales using the Models: XGBOOST and Stacked. Created as a university thesis project.",
         },
         {
           title: "Weather App",
