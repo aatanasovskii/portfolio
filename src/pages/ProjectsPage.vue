@@ -43,7 +43,14 @@ export default {
           // link: "https://github.com/aatanasovskii/shopping-app-vuejs",
           image: "Tentastique.png",
           description:
-              "A dynamic shopping app with Vue.js, Vuex, and Vue Router. Users can browse products and manage their carts.",
+              "A dynamic shopping app with Vue.js, Vuex, and Vue Router. Users can browse products and manage their carts. This was a project at work but i did the most of it on my own.",
+        },
+        {
+          title: "Departmentware",
+          // link: "https://github.com/aatanasovskii/shopping-app-vuejs",
+          // image: "Tentastique.png",
+          description:
+              "The biggest project I have worked on is a Departmentware Store for Police Stations and Officers in the USA, where we...",
         },
           // todo: add AI apps here:
           //

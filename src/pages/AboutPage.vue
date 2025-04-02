@@ -8,7 +8,7 @@
 
     <div class="about-content">
       <p><strong>Name:</strong> Andrej Atanasovski</p>
-      <p><strong>Age:</strong> 24</p>
+      <p><strong>Age:</strong> 25</p>
       <p><strong>Current Position:</strong> Full Stack Developer</p>
       <p><strong>Company:</strong> Vitech Development (Skopje, North Macedonia)</p>
       <p><strong>Phone:</strong> +38976949363</p>

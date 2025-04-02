@@ -6,27 +6,34 @@
 
     <div class="experience-list">
       <div class="experience-item">
-        <h3 class="role-title">Software Engineer at Vitech (Feb 2023 - present):</h3>
+        <h3 class="role-title">🔹 Software Engineer at Vitech (Feb 2023 - present):</h3>
         <p class="role-description">
-          🔹 Building many full stack applications for different purposes, with JavaScript, Node.js, GraphQL, PostgreSQL on
+          Building many full stack applications for different purposes, with JavaScript, Node.js, GraphQL, PostgreSQL on
           the backend, and JavaScript and Vue.js on the frontend.
           <br>Also, implementing AI features in our software products.
         </p>
       </div>
 
       <div class="experience-item">
-        <h3 class="role-title">BSS Operations Specialist at A1 Macedonia (Jun 2022 - Dec 2022):</h3>
+        <h3 class="role-title">🔹 BSS Operations Specialist at A1 Macedonia (Jun 2022 - Dec 2022):</h3>
         <p class="role-description">
-          🔹 Responsible for ensuring availability and performance of the databases that support the system.
+          Responsible for ensuring availability and performance of the databases that support the system.
           <br>Responsible for troubleshooting and problem solving of SQL queries with proactively monitoring the database
           systems.
         </p>
       </div>
 
       <div class="experience-item">
-        <h3 class="role-title">Data Analyst Intern at A1 Macedonia (Feb 2022 - Jun 2022):</h3>
+        <h3 class="role-title">🔹 Data Entry/Research Analyst <em>(side job as a contractor)</em> at Veeva Systems (Oct 2022 - Sep 2024):</h3>
         <p class="role-description">
-          🔹 Analyzing and organizing data and marketing results. Creating and optimizing prediction models with Machine
+          Research on healthcare events across various categories, organizing the data, also cleaning up the and structuring information for efficient retrieval and analysis to store it in a databases.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="role-title">🔹 Data Analyst Intern at A1 Macedonia (Feb 2022 - Jun 2022):</h3>
+        <p class="role-description">
+          Analyzing and organizing data and marketing results. Creating and optimizing prediction models with Machine
           Learning Algorithms,
           <br>where I worked on two prediction models: one for Improving Sales and one for Fraud Prediction Model.
         </p>
