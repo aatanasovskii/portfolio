@@ -1,2 +1,0 @@
-In the MainLayout fix:
- // todo: fix the full page width and height to e able to scroll the whole way

@@ -5,8 +5,7 @@
     </div>
 
     <ul class="content-container">
-      <li>Proficient in Javascript, Node.js, Vue.js, Python.</li>
-      <li>Cloud platforms: AWS, Azure and Firebase.</li>
+      <li>Proficient Fullstack Developer, currently working with Javascript, Node.js, Vue.js, Python, SQL.</li>
     </ul>
 
     <div v-for="skill in skills" class="content-container">
@@ -16,11 +15,17 @@
     <div class="header-container">
       <h1 class="page-title">Soft Skills</h1>
     </div>
-    <ul class="content-container">
-      <li>
-        Open-minded | Team-player | Customer oriented | Ability to work under pressure | Good
-        communication skills | Divergent thinking | Completing tasks and ability to meet the time limits.
-      </li>
+    <ul class="soft-skills-grid">
+      <li>Open-minded.</li>
+      <li>Team-player.</li>
+      <li>Customer-Oriented.</li>
+      <li>Works well under pressure.</li>
+      <li>Attention to detail.</li>
+      <li>Effective communicator.</li>
+      <li>Divergent thinking.</li>
+      <li>Time management.</li>
+      <li>Continuous learner.</li>
+      <li>Self-Driven to take action before being asked.</li>
     </ul>
   </main>
 </template>
@@ -39,12 +44,12 @@ export default {
           percentage: 80
         },
         {
-          skill: "Python",
-          percentage: 60
-        },
-        {
           skill: "Node JS",
           percentage: 70
+        },
+        {
+          skill: "Python",
+          percentage: 65
         },
         {
           skill: "Vue JS",
@@ -52,19 +57,35 @@ export default {
         },
         {
           skill: "SQL",
-          percentage: 70
-        },
-        {
-          skill: "Firebase",
-          percentage: 50
-        },
-        {
-          skill: "GraphQL",
           percentage: 80
         },
         {
+          skill: "PostgreSQL",
+          percentage: 80
+        },
+        {
+          skill: "Firebase",
+          percentage: 60
+        },
+        {
+          skill: "RESTful APIs",
+          percentage: 75
+        },
+        {
+          skill: "GraphQL",
+          percentage: 70
+        },
+        {
+          skill: "AI / ML / Embeddings: OpenAI API / AWS Bedrock / LangChain",
+          percentage: 60
+        },
+        {
+          skill: "Git & GitHub/GitLab",
+          percentage: 75
+        },
+        {
           skill: "Microsoft Office",
-          percentage: 90
+          percentage: 80
         }
       ],
     }

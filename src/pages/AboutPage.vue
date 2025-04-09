@@ -17,15 +17,15 @@
 
       <h2>Who Am I?</h2>
       <p>
-        Passionate about building and helping others build, solving problems, continuously learning and implementing cutting-edge technologies in my projects.
+        Passionate about building and helping others build, solving problems, continuously learning and <br>implementing cutting-edge technologies in my projects.
       </p>
 
       <h2>What I Bring?</h2>
       <ul>
-        <li>🔹 Expertise in frontend & backend development</li>
-        <li>🔹 AI-driven application features</li>
-        <li>🔹 Strong problem-solving and teamwork</li>
-        <li>🔹 Performance-optimized web solutions</li>
+        <li>🔹 Expertise in frontend & backend development.</li>
+        <li>🔹 AI-driven application features.</li>
+        <li>🔹 Strong problem-solving and teamwork.</li>
+        <li>🔹 Performance-optimized web solutions.</li>
       </ul>
     </div>
 
