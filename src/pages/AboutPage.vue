@@ -7,10 +7,8 @@
     </div>
 
     <div class="about-content">
-      <p><strong>Name:</strong> Andrej Atanasovski</p>
-      <p><strong>Age:</strong> 25</p>
-      <p><strong>Current Position:</strong> Full Stack Developer</p>
-      <p><strong>Company:</strong> Vitech Development (Skopje, North Macedonia)</p>
+      <p><strong>Name:</strong> Andrej Atanasovski, <strong>Age:</strong> 25</p>
+      <p><strong>Current Position:</strong> Full Stack Developer, at Vitech Development (Skopje)</p>
       <p><strong>Phone:</strong> +38976949363</p>
       <p><strong>Email:</strong> andrej.atanasovski.00@gmail.com</p>
       <p><strong>Location:</strong> Skopje, North Macedonia</p>
@@ -27,9 +25,16 @@
         <li>🔹 Strong problem-solving and teamwork.</li>
         <li>🔹 Performance-optimized web solutions.</li>
       </ul>
-    </div>
 
-<!--  todo: Add hobbies in the About section  -->
+      <h2>Hobbies & Interests</h2>
+      <ul>
+        <li>⚽️ Playing all kinds of sports — skiing, fitness, basketball, football and so much more!</li>
+        <li>⛰️ Hiking and nature walks.</li>
+        <li>📚 Reading about tech innovation and entrepreneurship.</li>
+        <li>🍻 Hanging out with friends and enjoying good company.</li>
+        <li>💡 Exploring AI, tech trends, and new frameworks.</li>
+      </ul>
+    </div>
 
   </div>
 </template>
