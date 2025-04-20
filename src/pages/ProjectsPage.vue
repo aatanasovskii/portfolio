@@ -10,7 +10,7 @@
     <div class="projects-grid">
       <div v-for="(project, index) in projects" :key="index" class="project-box">
         <h3 class="project-title">{{ project.title }}</h3>
-        <img v-if="project.image" :src="`/${project.image}`" :alt="project.title" class="project-image"/>
+        <img v-if="project.image" :src="getImage(project.image)" :alt="project.title" class="project-image" />
         <p>{{ project.description }}</p>
         <a v-if="project.showButton" :href="project.link" class="button" target="_blank">Check it out!</a>
       </div>
@@ -109,6 +109,16 @@ export default {
         },
       ],
     };
+  },
+
+  methods: {
+    getImage(imageName) {
+      try {
+        return new URL(`../assets/images/${imageName}`, import.meta.url).href;
+      } catch {
+        return '';
+      }
+    }
   }
 };
 </script>
