@@ -35,7 +35,7 @@ export default {
   name: 'HomePage',
   methods: {
     openCV() {
-      window.open('/Andrej-Atanasovski-CV.pdf', '_blank');
+      window.open('/CV-Andrej.pdf', '_blank');
     }
   }
 }
