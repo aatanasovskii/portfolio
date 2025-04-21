@@ -35,7 +35,7 @@ export default {
   name: 'HomePage',
   methods: {
     openCV() {
-      window.open('/portfolio/CV-Andrej.pdf', '_blank');
+      window.open('/CV-Andrej.pdf', '_blank');
     }
   }
 }
