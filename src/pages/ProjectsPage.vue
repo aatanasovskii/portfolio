@@ -69,7 +69,7 @@ export default {
           title: "Sales Prediction (Machine Learning)",
           link: "https://github.com/aatanasovskii/Machine-Learning---Sales-Prediction",
           image: "ML_Predicting_Sales.png",
-          description: "ML model for Predicts Sales using the Models: XGBOOST and Stacked. Created as a university thesis project.",
+          description: "ML model for Predicts Sales using the Models: XGBOOST and Stacked (combination of SARIMAX and OLS). Created as a university thesis project.",
           showButton: true,
         },
         {
