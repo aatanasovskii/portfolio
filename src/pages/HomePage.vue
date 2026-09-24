@@ -1,46 +1,67 @@
 <template>
   <main class="home-page">
-    <div class="header-container">
-      <div>
-        <h1 class="page-title">Hi, I'm Andrej</h1>
-        <div class="page-subtitle">FULL STACK DEVELOPER</div>
+    <header class="hero">
+      <div class="hero-text">
+        <h1 class="hero-title">Hi, I'm Andrej</h1>
+        <p class="hero-subtitle">Full-Stack Software Engineer</p>
+        <p class="hero-location">Skopje, North Macedonia</p>
       </div>
-      <div class="image-container">
-        <img class="home-portrait" src="../assets/images/andrej_bachelor_feit.jpeg" alt="">
-        <button class="icon-cv" @click="openCV">Download My CV</button>
+      <div class="hero-media">
+        <img
+          class="hero-portrait"
+          src="../assets/images/andrej_bachelor_feit.jpeg"
+          alt="Portrait of Andrej Atanasovski"
+          width="200"
+          height="200"
+        >
+        <a class="cv-button" :href="cvUrl" target="_blank" rel="noopener">Download My CV</a>
       </div>
-    </div>
+    </header>
 
-    <div class="content-container">
-      <div class="content">
-        <strong>🔹 Software Engineer</strong> with 2.5+ years of experience in Full Stack Development.
-        <br><em>  Building seamless digital experiences.</em>
-      </div>
-      <div class="content">
-        <strong>🔹 Bachelor of Science</strong> at the University “Ss. Cyril and Methodius” (UKIM) of Skopje - Faculty of Electrical Engineering and Information Technologies (FEIT),
-        <br>Major: <em>Computer Systems Engineering, Automation, and Robotics.</em>
-      </div>
-      <div class="content">🔹 Passionate about building scalable and user-friendly web applications using modern technologies like Javascript, Python, Node.js, Vue.js/React.js, GraphQL, AWS.</div>
-      <div class="content">
-        <strong>🔹 AI-Powered Development:</strong> Integrating AI features in various different applications. Leveraging OpenAI, AWS Bedrock, LLAMA and custom AI models
-        <br>for tasks like image processing, natural language understanding, and predictive analytics.
-      </div>
-    </div>
+    <section class="summary" aria-label="Summary">
+      <ul class="highlights">
+        <li>
+          <strong>Software engineer with 4+ years in tech</strong>, building production SaaS with Node.js, Vue.js,
+          PostgreSQL and AWS.
+        </li>
+        <li>
+          I currently work on
+          <a href="https://departmentware.com" target="_blank" rel="noopener noreferrer"><strong>Departmentware</strong></a>,
+          a platform used by 50+ police departments across the US, building its policy management software,
+          a configurable form builder, and the single sign-on hub that connects every app.
+        </li>
+        <li>
+          <strong>AI in production:</strong> I build LLM features where they help users, like a knowledge base over
+          agency policies (RAG) shared across products, image-similarity search and chat assistants with OpenAI,
+          Gemini and Amazon Titan.
+        </li>
+        <li>
+          <strong>Education:</strong> finishing an MSc in Cloud Computing at UKIM (FINKI), with a thesis on
+          AI-assisted AWS cost management. BSc in Computer Systems Engineering, Automation and Robotics (UKIM, FEIT).
+        </li>
+      </ul>
 
+      <ul class="tech-list" aria-label="Main technologies">
+        <li v-for="tech in techStack" :key="tech">{{ tech }}</li>
+      </ul>
+
+      <router-link class="projects-link" :to="{ name: 'ProjectsPage' }">See my projects →</router-link>
+    </section>
   </main>
 </template>
 
 <script>
 export default {
   name: 'HomePage',
-  methods: {
-    openCV() {
-      window.open('/CV-Andrej.pdf', '_blank');
-    }
-  }
-}
+  data() {
+    return {
+      cvUrl: `${import.meta.env.BASE_URL}Andrej-Atanasovski-CV.pdf`,
+      techStack: ['TypeScript', 'Node.js', 'Vue.js', 'GraphQL', 'PostgreSQL', 'AWS', 'Docker'],
+    };
+  },
+};
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 @use "HomePage";
 </style>

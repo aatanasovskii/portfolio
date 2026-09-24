@@ -18,8 +18,7 @@ const router = createRouter({
         },
         {
           path: '/services',
-          name: 'ServicesPage',
-          component: () => import('@/pages/ServicesPage.vue'),
+          redirect: { name: 'HomePage' },
         },
         {
           path: '/skills',

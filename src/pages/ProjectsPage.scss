@@ -1,104 +1,243 @@
+@use "../css/variables";
+@use "../css/mixins";
+
 .projects-page {
-  .header-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    gap: 1.5rem;
-    width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  color: variables.$mainText;
 
-    .page-title {
-      color: #333;
-    }
-
-    .page-subtitle {
-      color: #555;
-      text-align: center;
-    }
-  }
-
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // Three columns
-    gap: 50px;
-    padding: 20px;
-    width: 100%;
-    max-width: 1300px; // Restrict width for better alignment
-    margin: 0 auto;
-    //justify-content: center;
-  }
-
-  .project-box {
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    //max-width: 1000px; // Restrict size
+  .page-title {
     margin: 0;
-    justify-content: space-between; // Ensure even spacing
-    width: 100%;
-    height: 450px;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    color: variables.$primary;
+  }
+
+  .projects-intro {
+    margin: 0.5rem 0 1.5rem;
+    color: #555;
+  }
+
+  .section-label {
+    margin: 0 0 0.9rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  .featured {
+    display: grid;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e6e9ec;
+    border-radius: 12px;
+    @include mixins.hover-card;
+
+    &::before {
+      z-index: 1;
+    }
+
+    &:hover .cover img {
+      transform: scale(1.04);
+    }
+
+    @media (min-width: 900px) {
+      flex-direction: row;
+
+      .cover {
+        flex: 0 0 46%;
+        aspect-ratio: auto;
+        min-height: 280px;
+      }
+    }
+  }
+
+  .cover {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    aspect-ratio: 16 / 9;
+    background: #eef2f5;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.4s ease;
+
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+  }
+
+  .cover--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, variables.$primary, variables.$secondary);
+  }
+
+  .cover-text {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: #fff;
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #555;
+  }
+
+  .title {
+    margin: 0.35rem 0 0.5rem;
+    font-size: 1.2rem;
+    color: variables.$primary;
+  }
+
+  .description {
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .role {
+    margin: 0.75rem 0 0;
+    padding-left: 0.9rem;
+    border-left: 2px solid #cfe3ee;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .chip,
+  .link-pill {
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(variables.$secondary, 0.12);
+    color: variables.$primary;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1.1rem;
+  }
+
+  .link-pill {
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
 
     &:hover {
-      transform: translateY(-5px);
+      background: variables.$primary;
+      color: #fff;
+    }
+  }
+
+  .earlier {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: 700px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .earlier-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e6e9ec;
+    border-radius: 12px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      border-color: variables.$secondary;
+      transform: translateX(3px);
     }
 
-    .project-title {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .project-image {
-      width: 100%;
-      max-width: 350px; // Ensure smaller image
-      display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
-
-      img {
-        width: 100%;
-        height: 100px; // Smaller image height
-        object-fit: cover;
-        border-radius: 8px;
-      }
-    }
-
-    p {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 10px;
-    }
-
-    .button {
-      margin-top: 15px;
-      background-color: #4193a9;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: background 0.3s ease;
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
 
       &:hover {
-        background-color: #2a3b4d;
+        transform: none;
       }
     }
-
   }
 
-  @media (max-width: 1500px) {
-    .projects-grid {
-      grid-template-columns: repeat(2, 1fr); // Two columns for tablets
+  .earlier-title {
+    display: block;
+    font-weight: 600;
+    color: variables.$primary;
+  }
+
+  .earlier-tech {
+    display: block;
+    font-size: 0.875rem;
+    color: #555;
+  }
+
+  .earlier-arrow {
+    font-weight: 700;
+    color: variables.$secondary;
+  }
+
+  .github-cta {
+    margin-top: 1.5rem;
+    text-align: center;
+
+    a {
+      font-weight: 600;
+      color: variables.$primary;
     }
   }
 
-  @media (max-width: 850px) {
-    .projects-grid {
-      grid-template-columns: repeat(1, 1fr); // One column for mobile
-    }
+  a:focus-visible {
+    outline: 3px solid variables.$secondary;
+    outline-offset: 2px;
   }
 }
