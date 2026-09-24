@@ -1,7 +1,7 @@
 <template>
   <main class="projects-page">
     <h1 class="page-title">Projects</h1>
-    <p class="projects-intro">HERE IS A SHOWCASE OF SOME PROJECTS I HAVE MADE.</p>
+    <p class="projects-intro">Production work, theses and side projects, most relevant first.</p>
 
     <h2 class="section-label">Featured</h2>
     <section class="featured">
@@ -67,7 +67,7 @@ export default {
         {
           title: 'Departmentware',
           label: 'Professional work · Vitech',
-          image: 'Departmentware.png',
+          image: 'Departmentware.webp',
           description: 'A SaaS platform used by 50+ police departments across the US, replacing paper-based work in officer training, equipment tracking, digital forms and policies.',
           role: 'I develop 3 of its products: Policy Management, Intel Forms (a configurable form builder) and the Hub with single sign-on, plus an AI knowledge base over all agency policies.',
           tech: ['TypeScript', 'Node.js', 'GraphQL', 'Vue.js', 'PostgreSQL', 'AWS', 'Docker'],
@@ -84,7 +84,7 @@ export default {
         {
           title: 'Data Warehouse CRM',
           label: 'Client project',
-          image: 'Tentastique.png',
+          image: 'Tentastique.webp',
           description: 'An e-commerce CRM with a warehouse system for managing products, deals, offers and invoices, with built-in meeting scheduling.',
           tech: ['Vue.js', 'Node.js', 'MySQL'],
           links: [],
@@ -92,7 +92,7 @@ export default {
         {
           title: 'Sales Prediction with Machine Learning',
           label: 'BSc thesis',
-          image: 'ML_Predicting_Sales.png',
+          image: 'ML_Predicting_Sales.webp',
           description: 'Sales forecasting with XGBoost and a stacked SARIMAX + OLS model.',
           tech: ['Python', 'XGBoost', 'Time series'],
           links: [{ label: 'GitHub', href: 'https://github.com/aatanasovskii/Machine-Learning---Sales-Prediction' }],
@@ -100,7 +100,7 @@ export default {
         {
           title: 'AI Assistants with RAG',
           label: 'Work & personal',
-          image: 'News_Summarizer.png',
+          image: 'News_Summarizer.webp',
           description: 'Assistants and LLM integrations built with the OpenAI, Llama and Amazon Titan APIs, including a news assistant that returns cited articles for any topic and a personalized travel planner.',
           tech: ['Python', 'Streamlit', 'OpenAI', 'RAG', 'Embeddings'],
           links: [
@@ -111,7 +111,7 @@ export default {
         {
           title: 'Fantasy Football Platform',
           label: 'Live product',
-          image: 'Fantopy.png',
+          image: 'Fantopy.webp',
           description: 'Worldwide rankings, multiple leagues and budget-based team selection, with points calculated every matchweek.',
           links: [{ label: 'Visit site', href: 'https://th.fantopy.com' }],
         },

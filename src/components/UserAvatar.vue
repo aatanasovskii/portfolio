@@ -1,9 +1,5 @@
 <template>
-  <div class="user-avatar">
-    <div class="user-avatar-photo">
-      <img src="../assets/images/avatar-bad-breaking.svg" alt="">
-    </div>
-  </div>
+  <div class="user-avatar" aria-hidden="true">AA</div>
 </template>
 
 <script>
