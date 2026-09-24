@@ -3,7 +3,7 @@
 .main-layout {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   position: relative;
   min-height: 100vh;
   background-color: variables.$background;
@@ -25,8 +25,20 @@
       justify-content: flex-start;
       flex: 1;
 
-      .menu-icon {
+      .menu-toggle {
+        display: flex;
+        padding: 0;
+        border: none;
+        background: none;
         cursor: pointer;
+
+        &:focus-visible {
+          outline: 3px solid variables.$secondary;
+          outline-offset: 4px;
+        }
+      }
+
+      .menu-icon {
         width: 30px;
         height: 30px;
         border-radius: 0;
@@ -173,12 +185,39 @@
       width: 100%;
       padding: 50px 20px;
       box-sizing: border-box;
-      overflow: scroll;
+      overflow-y: auto;
       font-family: sans-serif;
 
       &.menu-active {
         width: calc(100% - 150px);
       }
+    }
+  }
+  @media (max-width: 767px) {
+    .main-header {
+      padding: 10px 16px;
+    }
+
+    .main-content {
+      .main-menu {
+        position: fixed;
+        top: 60px;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        z-index: 30;
+      }
+
+      .page-content.menu-active {
+        width: 100%;
+      }
+    }
+
+    .menu-backdrop {
+      position: fixed;
+      inset: 60px 0 0;
+      z-index: 25;
+      background: rgba(0, 0, 0, 0.35);
     }
   }
 }

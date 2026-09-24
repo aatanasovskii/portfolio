@@ -3,7 +3,16 @@
     <div class="main-header">
 
       <div class="toggle-menu">
-        <img @click="toggleMenu" class="menu-icon" src="../assets/icons/burger-menu.png" alt="">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-controls="main-menu"
+          :aria-expanded="menuOpened"
+          @click="toggleMenu"
+        >
+          <img class="menu-icon" src="../assets/icons/burger-menu.png" alt="">
+        </button>
       </div>
 
       <div class="user-details-container">
@@ -20,7 +29,7 @@
     </div>
 
     <div class="main-content">
-      <div class="main-menu" v-if="menuOpened">
+      <nav id="main-menu" class="main-menu" v-if="menuOpened" aria-label="Main" @click="closeMenuOnMobile">
         <div class="menu-item-container">
           <router-link class="side-menu-item" :to="{ name: 'HomePage' }">Home</router-link>
           <router-link class="side-menu-item" :to="{ name: 'ProjectsPage' }">Projects</router-link>
@@ -28,7 +37,9 @@
           <router-link class="side-menu-item" :to="{ name: 'SkillsPage' }">Skills</router-link>
           <router-link class="side-menu-item" :to="{ name: 'AboutPage' }">About</router-link>
         </div>
-      </div>
+      </nav>
+
+      <div v-if="menuOpened && isMobile" class="menu-backdrop" @click="menuOpened = false"></div>
 
       <div id="page-content" class="page-content" :class="{ 'menu-active': menuOpened }">
         <router-view :key="$route.path"/>
@@ -64,18 +75,46 @@
 import {RouterLink, RouterView} from 'vue-router'
 import UserAvatar from "@/components/UserAvatar.vue";
 
+const MOBILE_QUERY = '(max-width: 767px)';
+
 export default {
   name: "MainLayout",
   components: {UserAvatar},
   data() {
+    const isMobile = window.matchMedia(MOBILE_QUERY).matches;
     return {
-      menuOpened: true
+      isMobile,
+      menuOpened: !isMobile,
     }
+  },
+
+  watch: {
+    $route() {
+      this.closeMenuOnMobile();
+    }
+  },
+
+  mounted() {
+    this.mediaQuery = window.matchMedia(MOBILE_QUERY);
+    this.mediaQuery.addEventListener('change', this.onViewportChange);
+  },
+
+  beforeUnmount() {
+    this.mediaQuery.removeEventListener('change', this.onViewportChange);
   },
 
   methods: {
     toggleMenu() {
       this.menuOpened = !this.menuOpened;
+    },
+    closeMenuOnMobile() {
+      if (this.isMobile) {
+        this.menuOpened = false;
+      }
+    },
+    onViewportChange(event) {
+      this.isMobile = event.matches;
+      this.menuOpened = !event.matches;
     },
     goToAboutPage() {
       this.$router.push({name: 'AboutPage'});
