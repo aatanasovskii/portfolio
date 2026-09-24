@@ -1,7 +1,7 @@
 <template>
   <main class="projects-page">
     <h1 class="page-title">Projects</h1>
-    <p class="projects-intro">HERE IS A SHOWCASE OF SOME PROJECTS I HAVE MADE.</p>
+    <p class="projects-intro">Production work, theses and side projects, most relevant first.</p>
 
     <h2 class="section-label">Featured</h2>
     <section class="featured">
