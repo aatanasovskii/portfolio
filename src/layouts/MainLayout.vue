@@ -43,7 +43,7 @@
 
       <div v-if="menuOpened && isMobile" class="menu-backdrop" @click="menuOpened = false"></div>
 
-      <div id="page-content" class="page-content" :class="{ 'menu-active': menuOpened }">
+      <div id="page-content" ref="pageContent" class="page-content" :class="{ 'menu-active': menuOpened }">
         <router-view :key="$route.path"/>
       </div>
 
@@ -87,6 +87,8 @@ export default {
   watch: {
     $route() {
       this.closeMenuOnMobile();
+      // Pages scroll inside .page-content, not the window, so reset it on every navigation.
+      this.$refs.pageContent.scrollTop = 0;
     }
   },
 
