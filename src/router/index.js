@@ -42,6 +42,10 @@ const router = createRouter({
         },
       ]
     },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: { name: 'HomePage' },
+    },
   ],
 })
 
