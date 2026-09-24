@@ -1,127 +1,138 @@
 <template>
   <main class="projects-page">
-    <div class="header-container">
-      <div>
-        <h1 class="page-title">Projects</h1>
-        <h3 class="page-subtitle">HERE IS A SHOWCASE OF SOME PROJECTS I HAVE MADE</h3>
-      </div>
-    </div>
+    <h1 class="page-title">Projects</h1>
+    <p class="projects-intro">HERE IS A SHOWCASE OF SOME PROJECTS I HAVE MADE.</p>
 
-    <div class="projects-grid">
-      <div v-for="(project, index) in projects" :key="index" class="project-box">
-        <h3 class="project-title">{{ project.title }}</h3>
-        <img v-if="project.image" :src="getImage(project.image)" :alt="project.title" class="project-image" />
-        <p>{{ project.description }}</p>
-        <a v-if="project.showButton" :href="project.link" class="button" target="_blank">Check it out!</a>
-      </div>
+    <h2 class="section-label">Featured</h2>
+    <section class="featured">
+      <article v-for="project in featured" :key="project.title" class="project">
+        <div v-if="project.image" class="cover">
+          <img :src="getImage(project.image)" :alt="`Screenshot of ${project.title}`" loading="lazy" />
+        </div>
+        <div v-else class="cover cover--placeholder">
+          <span class="cover-text">{{ project.coverText }}</span>
+        </div>
+
+        <div class="body">
+          <span class="label">{{ project.label }}</span>
+          <h3 class="title">{{ project.title }}</h3>
+          <p class="description">{{ project.description }}</p>
+          <p v-if="project.role" class="role">{{ project.role }}</p>
+
+          <ul v-if="project.tech" class="chips">
+            <li v-for="tech in project.tech" :key="tech" class="chip">{{ tech }}</li>
+          </ul>
+
+          <div v-if="project.links.length" class="links">
+            <a
+              v-for="link in project.links"
+              :key="link.href"
+              class="link-pill"
+              :href="link.href"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {{ link.label }} <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <h2 class="section-label">Earlier learning projects</h2>
+    <ul class="earlier">
+      <li v-for="project in earlier" :key="project.title">
+        <a class="earlier-item" :href="project.href" target="_blank" rel="noopener noreferrer">
+          <span>
+            <span class="earlier-title">{{ project.title }}</span>
+            <span class="earlier-tech">{{ project.tech }}</span>
+          </span>
+          <span class="earlier-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="github-cta">
+      <a href="https://github.com/aatanasovskii" target="_blank" rel="noopener noreferrer">See everything on GitHub →</a>
     </div>
   </main>
 </template>
 
 <script>
 export default {
-  name: "ProjectsPage",
+  name: 'ProjectsPage',
   data() {
     return {
-      projects: [
+      featured: [
         {
-          title: "Fantasy Football Game",
-          link: "https://th.fantopy.com",
-          image: "Fantopy.png",
-          description: "Fantasy Football Game: where you can pick you own football teams and it calculates points every Match-week. Worldwide ranking, where you can compete in different leagues and pick your best team in a given budget",
-          showButton: true,
+          title: 'Departmentware',
+          label: 'Professional work · Vitech',
+          image: 'Departmentware.png',
+          description: 'A SaaS platform used by 50+ police departments across the US, replacing paper-based work in officer training, equipment tracking, digital forms and policies.',
+          role: 'I develop 3 of its products: Policy Management, Intel Forms (a configurable form builder) and the Hub with single sign-on, plus an AI knowledge base over all agency policies.',
+          tech: ['TypeScript', 'Node.js', 'GraphQL', 'Vue.js', 'PostgreSQL', 'AWS', 'Docker'],
+          links: [{ label: 'Visit site', href: 'https://departmentware.com/' }],
         },
         {
-          title: "Suisse Blockchain Crypto Token",
-          link: "https://suisseblockchain.io/",
-          image: "Suisse.png",
-          description: "Crypto token (SUISSE): Creating and buying a the token. A website using Blockchain and Smart Contracts with Ethereum (ETH) and NULLS Blockchains, where people can buy the tokens using their crypto wallets.",
-          showButton: true,
+          title: 'AWS Cost Management System',
+          label: 'MSc thesis · In progress',
+          coverText: 'AWS · CloudTrail · RAG · Lambda',
+          description: 'Forecasts AWS spend, flags idle resources and uses RAG over CloudTrail to explain who created each resource and whether it’s safe to stop. An operator approves every action, run by a Lambda that can only touch tagged resources.',
+          tech: ['AWS Lambda', 'CloudTrail', 'IAM', 'RAG', 'LLMs'],
+          links: [],
         },
         {
-          title: "Data Warehouse CRM Storage",
-          image: "Tentastique.png",
-          description: "E-commerce solution, a tailored CRM with complete warehouse storage system for managing products, their attributes, deals, offers, invoices and everything you need. The platform also handles meeting scheduling and streamlines business operations",
-          showButton: false,
+          title: 'Data Warehouse CRM',
+          label: 'Client project',
+          image: 'Tentastique.png',
+          description: 'An e-commerce CRM with a warehouse system for managing products, deals, offers and invoices, with built-in meeting scheduling.',
+          tech: ['Vue.js', 'Node.js', 'MySQL'],
+          links: [],
         },
         {
-          title: "Departmentware",
-          link: "https://departmentware.com/",
-          image: "Departmentware.png",
-          description: "The biggest project I have worked on is Departmentware Store for Police Stations and Officers in the USA. It has training programs for law enforcement, replacing outdated, paper-based workflows. It enables officers to capture, organize, and act on field intelligence with speed, accuracy, and consistency.",
-          showButton: true,
+          title: 'Sales Prediction with Machine Learning',
+          label: 'BSc thesis',
+          image: 'ML_Predicting_Sales.png',
+          description: 'Sales forecasting with XGBoost and a stacked SARIMAX + OLS model.',
+          tech: ['Python', 'XGBoost', 'Time series'],
+          links: [{ label: 'GitHub', href: 'https://github.com/aatanasovskii/Machine-Learning---Sales-Prediction' }],
         },
         {
-          title: "Netflix Clone - Movie Playlist (JavaScript)",
-          link: "https://github.com/aatanasovskii/Netflix_Clone-project",
-          image: "Netflix_Clone.png",
-          description: "A movies website using TMDB API (The Movies Database) where movies are categorized, and trailers can be viewed for every movie.",
-          showButton: true,
+          title: 'AI Assistants with RAG',
+          label: 'Work & personal',
+          image: 'News_Summarizer.png',
+          description: 'Assistants and LLM integrations built with the OpenAI, Llama and Amazon Titan APIs, including a news assistant that returns cited articles for any topic and a personalized travel planner.',
+          tech: ['Python', 'Streamlit', 'OpenAI', 'RAG', 'Embeddings'],
+          links: [
+            { label: 'News assistant', href: 'https://github.com/aatanasovskii/newsletter-openAI-assistant' },
+            { label: 'Travel planner', href: 'https://github.com/aatanasovskii/AI-personalized-travel-planner' },
+          ],
         },
         {
-          title: "React Meetup App",
-          link: "https://github.com/aatanasovskii/meetups-react-app",
-          image: "ReactApp_Meetups.png",
-          description: "An interactive React App for organizing meetups. Uses NoSQL (Firebase) for storing your meetups and favorites.",
-          showButton: true,
+          title: 'Fantasy Football Platform',
+          label: 'Live product',
+          image: 'Fantopy.png',
+          description: 'Worldwide rankings, multiple leagues and budget-based team selection, with points calculated every matchweek.',
+          links: [{ label: 'Visit site', href: 'https://th.fantopy.com' }],
         },
-        {
-          title: "Sales Prediction (Machine Learning)",
-          link: "https://github.com/aatanasovskii/Machine-Learning---Sales-Prediction",
-          image: "ML_Predicting_Sales.png",
-          description: "ML model for Predicts Sales using the Models: XGBOOST and Stacked (combination of SARIMAX and OLS). Created as a university thesis project.",
-          showButton: true,
-        },
-        {
-          title: "AI App: Newsletter Assistant",
-          link: "https://github.com/aatanasovskii/newsletter-openAI-assistant",
-          image: "News_Summarizer.png",
-          description: "OpenAI Assistant, made with Python and Streamlit, which would return latest news that are retrieved from the API (https://newsapi.org/) for a topic we want with references (urls) and everything..",
-          showButton: true,
-        },
-        {
-          title: "AI App: Personalized Travel Planner",
-          link: "https://github.com/aatanasovskii/AI-personalized-travel-planner",
-          description: "OpenAI Assistant: Simple ChatBot (Full Stack) using the OpenAI API, which can be used as a personalized travel planner, to layout a plan for the best things you can do when you travel to a certain destination.",
-          showButton: true,
-        },
-        {
-          title: "Movie Playlist (React)",
-          link: "https://github.com/aatanasovskii/REACT_MoviePlaylist-",
-          image: "My_Movie_Playlist.png",
-          description: "A movie search and playlist app using Open Movie Database API, built with React.",
-          showButton: true,
-        },
-        {
-          title: "Vue.js Shopping App",
-          link: "https://github.com/aatanasovskii/shopping-app-vuejs",
-          image: "shopping-app.png",
-          description: "A dynamic simple Shopping App with Vue.js (only frontend, without backend). Users can browse products and manage their carts.",
-          showButton: true,
-        },
-        {
-          title: "Weather App",
-          link: "https://github.com/aatanasovskii/Weather-App",
-          image: "Weather_App.png",
-          description: "Simple weather app using Yahoo Weather API.",
-          showButton: true,
-        },
+      ],
+      earlier: [
+        { title: 'Netflix Clone', tech: 'JavaScript · TMDB API', href: 'https://github.com/aatanasovskii/Netflix_Clone-project' },
+        { title: 'React Meetups', tech: 'React · Firebase', href: 'https://github.com/aatanasovskii/meetups-react-app' },
+        { title: 'Movie Playlist', tech: 'React · OMDb API', href: 'https://github.com/aatanasovskii/REACT_MoviePlaylist-' },
+        { title: 'Vue Shopping App', tech: 'Vue.js', href: 'https://github.com/aatanasovskii/shopping-app-vuejs' },
+        { title: 'Weather App', tech: 'JavaScript · Yahoo Weather API', href: 'https://github.com/aatanasovskii/Weather-App' },
       ],
     };
   },
-
   methods: {
     getImage(imageName) {
-      try {
-        return new URL(`../assets/images/${imageName}`, import.meta.url).href;
-      } catch {
-        return '';
-      }
-    }
-  }
+      return new URL(`../assets/images/${imageName}`, import.meta.url).href;
+    },
+  },
 };
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 @use "ProjectsPage";
 </style>

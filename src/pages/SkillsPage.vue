@@ -1,99 +1,77 @@
 <template>
   <main class="skills-page">
-    <div class="header-container">
-      <h1 class="page-title">Technical Skills</h1>
-    </div>
+    <h1 class="page-title">Skills</h1>
 
-    <ul class="content-container">
-      <li>Proficient Fullstack Developer, currently working with Javascript, Node.js, Vue.js, Python, SQL.</li>
-    </ul>
+    <section class="skill-groups">
+      <article v-for="group in groups" :key="group.title" class="card">
+        <h2 class="card-title">{{ group.title }}</h2>
+        <p class="card-note">{{ group.note }}</p>
 
-    <div v-for="skill in skills" class="content-container">
-      <skill-bar :skill="skill.skill" :percentage="skill.percentage" />
-    </div>
+        <ul v-if="group.items" class="work-list">
+          <li v-for="item in group.items" :key="item.title">
+            <span class="work-title">{{ item.title }}</span>
+            <span class="work-text">{{ item.text }}</span>
+          </li>
+        </ul>
 
-    <div class="header-container">
-      <h1 class="page-title">Soft Skills</h1>
-    </div>
-    <ul class="soft-skills-grid">
-      <li>Open-minded.</li>
-      <li>Team-player.</li>
-      <li>Customer-Oriented.</li>
-      <li>Works well under pressure.</li>
-      <li>Attention to detail.</li>
-      <li>Effective communicator.</li>
-      <li>Divergent thinking.</li>
-      <li>Time management.</li>
-      <li>Continuous learner.</li>
-      <li>Self-Driven to take action before being asked.</li>
-    </ul>
+        <ul v-else class="chips">
+          <li v-for="skill in group.skills" :key="skill" class="chip">{{ skill }}</li>
+        </ul>
+      </article>
+    </section>
   </main>
 </template>
 
 <script>
-import SkillBar from "@/components/SkillBar.vue";
-
 export default {
   name: 'SkillsPage',
-  components: {SkillBar},
   data() {
     return {
-      skills: [
+      groups: [
         {
-          skill: "Javascript",
-          percentage: 80
+          title: 'Core stack',
+          note: 'My daily stack on Departmentware',
+          skills: ['TypeScript', 'JavaScript', 'Node.js', 'Vue.js', 'GraphQL', 'REST APIs', 'React', 'Python'],
         },
         {
-          skill: "Node JS",
-          percentage: 70
+          title: 'Databases',
+          note: 'Schema design, queries and SQL optimization',
+          skills: ['PostgreSQL', 'SQL', 'MySQL', 'Firebase (NoSQL)'],
         },
         {
-          skill: "Python",
-          percentage: 65
+          title: 'Cloud & DevOps',
+          note: 'Background jobs, file storage and releases, plus an MSc in Cloud Computing',
+          skills: ['AWS (S3, SQS, SES)', 'Docker', 'CI/CD', 'Git', 'Lambda', 'IAM', 'CloudTrail', 'Bedrock', 'Linux'],
         },
         {
-          skill: "Vue JS",
-          percentage: 80
+          title: 'AI & LLMs',
+          note: 'A policy knowledge base (RAG), image-similarity search and chat assistants',
+          skills: ['OpenAI', 'RAG', 'Embeddings', 'Gemini', 'Amazon Titan', 'Llama', 'LangChain'],
         },
         {
-          skill: "SQL",
-          percentage: 80
+          title: 'Languages',
+          note: 'Comfortable working in international teams',
+          skills: ['English (C1)', 'Macedonian (native)', 'Serbian/Croatian (fluent)'],
         },
         {
-          skill: "PostgreSQL",
-          percentage: 80
+          title: 'How I work',
+          note: 'Beyond the stack: how I build, ship and support production software',
+          span: 4,
+          items: [
+            { title: 'End-to-end ownership', text: 'Turn client requirements into technical specs and build them from database to UI.' },
+            { title: 'Code quality', text: 'Review pull requests and help onboard new developers to the codebase.' },
+            { title: 'Reliable releases', text: 'Handle releases and production issues across 3 products used by 50+ police departments.' },
+            { title: 'Secure access', text: 'Work on single sign-on and per-department access control across all products.' },
+            { title: 'Practical AI', text: 'Add AI where it solves a real problem, like a policy knowledge base shared across products.' },
+            { title: 'Always learning', text: 'Studying for an MSc in Cloud Computing alongside full-time work, with a thesis on AWS cost management.' },
+          ],
         },
-        {
-          skill: "Firebase",
-          percentage: 60
-        },
-        {
-          skill: "RESTful APIs",
-          percentage: 75
-        },
-        {
-          skill: "GraphQL",
-          percentage: 70
-        },
-        {
-          skill: "AI / ML / Embeddings: OpenAI API / AWS Bedrock / LangChain",
-          percentage: 60
-        },
-        {
-          skill: "Git & GitHub/GitLab",
-          percentage: 75
-        },
-        {
-          skill: "Microsoft Office",
-          percentage: 80
-        }
       ],
-    }
-  }
-}
+    };
+  },
+};
 </script>
 
-
-<style lang='scss'>
+<style lang="scss">
 @use "SkillsPage";
 </style>

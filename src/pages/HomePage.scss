@@ -1,73 +1,168 @@
+@use "../css/variables";
+
 .home-page {
-  .header-container {
+  max-width: 960px;
+  margin: 0 auto;
+  color: variables.$mainText;
+
+  .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
-    width: 100%;
+    gap: 2rem;
+  }
 
-    .page-title {
-      color: #333;
+  .hero-title {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    line-height: 1.15;
+    color: variables.$primary;
+  }
+
+  .hero-subtitle {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: variables.$primary;
+  }
+
+  .hero-location {
+    margin: 0.25rem 0 0;
+    color: #555;
+  }
+
+  .hero-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  .hero-portrait {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .cv-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background: variables.$primary;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: #1d2a37;
+    }
+  }
+
+  .summary {
+    margin-top: 2.5rem;
+    padding: 1.75rem 2rem;
+    background: #fff;
+    border: 1px solid #e6e9ec;
+    border-radius: 12px;
+    line-height: 1.6;
+  }
+
+  .highlights {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 1.05rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(0.8em - 4px);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: variables.$secondary;
+        box-shadow: 0 0 0 4px rgba(variables.$secondary, 0.15);
+      }
     }
 
-    .page-subtitle {
-      color: #333;
-      font-style: italic;
-      font-weight: bold;
+    strong {
+      color: variables.$primary;
     }
 
-    .image-container {
-      display: flex;
+    a {
+      color: variables.$primary;
+      text-decoration-color: rgba(variables.$secondary, 0.6);
+      text-underline-offset: 3px;
+    }
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0 0;
+    padding: 1.5rem 0 0;
+    border-top: 1px solid #eceff1;
+    list-style: none;
+
+    li {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(variables.$secondary, 0.1);
+      color: variables.$primary;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+  }
+
+  .projects-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: variables.$primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  a:focus-visible {
+    outline: 3px solid variables.$secondary;
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
       flex-direction: column;
-      align-items: flex-end;
-      gap: 1rem;
-      margin-right: 4rem;
+      text-align: center;
+      gap: 1.25rem;
+    }
 
-      .icon-cv {
-        display: inline-block;
-        padding: 12px 24px;
-        font-size: 1rem;
-        font-weight: bold;
-        color: #fff;
-        background: linear-gradient(135deg, #A0D4E3, #4193a9);
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    .hero-media {
+      order: -1;
+    }
 
-        &:hover {
-          background: linear-gradient(135deg, #4193a9, #2a3b4d);
-          transform: translateY(-2px);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
+    .hero-portrait {
+      width: 160px;
+      height: 160px;
+    }
 
-        &:active {
-          transform: translateY(0);
-          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-        }
-      }
-
-      .home-portrait {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 90%;
-      }
+    .summary {
+      margin-top: 2rem;
+      padding: 1.25rem;
     }
   }
-
-  .content-container {
-    margin: 2rem;
-    line-height: 1.75;
-    color: #333;
-    padding: 0.5rem 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-    .content {
-      margin-bottom: 1.2rem;
-      font-size: 1.2rem;
-    }
-  }
-
 }
